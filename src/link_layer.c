@@ -95,11 +95,6 @@ int llOpenTx(LinkLayer llParameters)
         int bytes = readByteSerialPort(&byte);
         if (bytes > 0)
         {
-            if (frameIndex == 0 && byte != FLAG_VALUE)
-            {
-                receivedBytes++;
-                continue;
-            }
             buf[frameIndex] = byte;
             frameIndex++;
             receivedBytes++;
